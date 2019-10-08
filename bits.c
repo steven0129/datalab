@@ -200,7 +200,7 @@ int bang(int x)
  */
 int bitAnd(int x, int y)
 {
-    return 42;
+    return ~((~x) | (~y));
 }
 
 /*
