@@ -188,7 +188,7 @@ int anyOddBit(int x)
  */
 int bang(int x)
 {
-    return 42;
+    return ~((x >> 31) | ((~x + 1) >> 31)) & 1;
 }
 
 /*
