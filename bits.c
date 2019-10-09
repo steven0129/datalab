@@ -914,7 +914,7 @@ int logicalNeg(int x)
  */
 int logicalShift(int x, int n)
 {
-    return 42;
+    return (x >> n) & (0xffffffff >> n);
 }
 
 /*
