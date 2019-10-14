@@ -212,7 +212,16 @@ int bitAnd(int x, int y)
  */
 int bitCount(int x)
 {
-    return 42;
+    int result = 0;
+    int mask1 = 0x55555555;  // 0101 0101 ...
+    int mask2 = 0x33333333;  // 0011 0011 ...
+    int mask3 = 0x0F0F0F0F;  // 0000 1111 ...
+
+    result = (x & mask1) + ((x >> 1) & mask1);
+    result = (result & mask2) + ((result >> 2) & mask2);
+    result = (result & mask3) + ((result >> 4) & mask3);
+
+    return (result + (result >> 8) + (result >> 16) + (result >> 24)) & 0xff;
 }
 
 /*
