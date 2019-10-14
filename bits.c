@@ -1177,7 +1177,8 @@ int tmax(void)
  */
 int tmin(void)
 {
-    return 42;
+    // Note: tmin沒有與之對應的正數
+    return 1 << 31;
 }
 
 /*
